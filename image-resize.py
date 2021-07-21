@@ -30,7 +30,7 @@ def images(image_path):
 
     image = Image.open(local_image_path)
 
-    height, width = image.size
+    width, height = image.size
 
     new_height = height
     new_width = width
@@ -41,7 +41,7 @@ def images(image_path):
         new_width = round(width * scale)
     elif w_arg and not h_arg:
         new_width = int(w_arg)
-        scale = new_width / height
+        scale = new_width / width
         new_height = round(height * scale)
     elif w_arg and h_arg:
         new_width = int(w_arg)
